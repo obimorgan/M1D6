@@ -10,24 +10,138 @@
 // // */
 
 // // // JS Basics
+const movies = [
+  {
+    Title: "The Lord of the Rings: The Fellowship of the Ring",
+    Year: "2001",
+    imdbID: "tt0120737",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings: The Return of the King",
+    Year: "2003",
+    imdbID: "tt0167260",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings: The Two Towers",
+    Year: "2002",
+    imdbID: "tt0167261",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of War",
+    Year: "2005",
+    imdbID: "tt0399295",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lords of Dogtown",
+    Year: "2005",
+    imdbID: "tt0355702",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings",
+    Year: "1978",
+    imdbID: "tt0077869",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of the Flies",
+    Year: "1990",
+    imdbID: "tt0100054",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lords of Salem",
+    Year: "2012",
+    imdbID: "tt1731697",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+  },
+  {
+    Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+    Year: "1984",
+    imdbID: "tt0087365",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of the Flies",
+    Year: "1963",
+    imdbID: "tt0057261",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Avengers",
+    Year: "2012",
+    imdbID: "tt0848228",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Infinity War",
+    Year: "2018",
+    imdbID: "tt4154756",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Age of Ultron",
+    Year: "2015",
+    imdbID: "tt2395427",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Endgame",
+    Year: "2019",
+    imdbID: "tt4154796",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+  },
+];
 
 // // /* EXERCISE A
 // //    Create a variable called test and assign a string value to it.
 // // */
 
-// // const test = "Hello World"
+const test = "Hello World"
 
 // // /* EXERCISE B
 // //     Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
 // // */
 
-// // let sum = 10 + 20
+let sum = 10 + 20
 
 // // /* EXERCISE C
 // //     Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 // // */
 
-// // let random = Math.floor(Math.random()*20)
+let random = Math.floor(Math.random()*20)
 
     
 // // // console.log(random)
@@ -35,40 +149,36 @@
 // // /* EXERCISE D
 // //     Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 // // */
-// // let me = {
-// //     name : "Roby",
-// //     surName: "Morgan",
-// //     age: "33"
-// // }
-// // // console.log(me)
+let me = {
+    name : "Roby",
+    surName: "Morgan",
+    age: "33"
+}
+console.log(me)
 
-// // /* EXERCISE E
-// //     Write a piece of code for programmatically removing the age property from the previously create object.
-// // */
+/* EXERCISE E
+    Write a piece of code for programmatically removing the age property from the previously create object.
+*/
 
-// // const  removeAge = function (obj) {
-// //     delete obj.age
-// // }
-// // // console.log(removeAge(me))
-// // // console.log(me)
+const  removeAge = function (obj) {
+    delete obj.age
+}
+// console.log(removeAge(me))
+// console.log(me)
 
 // // /* EXERCISE F
-// //    Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
+// //    Write a piece of code for programmatically adding to the me object you defined before an array called skills, 
+// containing the programming languages you know right now.
 // // */
 
-// // const addAnArrayOfSkills = function (x) {
-// //     me.skills = x
-// // }
+me.skills = ["skils1", "skilss2"]
 // // addAnArrayOfSkills(['skills1', 'skills2', 'skills3', 'skills4'])
 // // // console.log(me)
 
 // // /* EXERCISE G
 // // */
 
-// // const removeLastSkill = function() {
-// //     me.skills.splice(-1)
-// // }
-// // // removeLastSkill(me)
+me.skills.pop()
 // // // console.log(me)
 
 
@@ -77,35 +187,32 @@
 // //     Write a function called dice; it should randomize an integer number between 1 and 6.
 // // */
 
-// // const die = function(min, max) {
-// //     min = 1
-// //     max = 6
-// //     return Math.floor(Math.random()*(max-min+1)+1)
-// // }
-// // // console.log(dice())
+function dice() {
+  Math.floor(Math.random() * 7)
+}
 
 // // /* EXERCISE 2
 // //     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 // // */
 
-// // const whoIsBigger = function (num1, num2) {
-// //     let biggestNUmber = ""
-// //     if (num1 > num2) {
-// //         return biggestNUmber += `${num1} Is bigger than ${num2}`
-// //     }else
-// //         return biggestNUmber += `${num2} Is bigger than ${num1}`
-// // }
+function whoIsBigger(num1, num2) {
+  if (num1 > num2) {
+    console.log(`${num1} is bigger than ${num2}`)
+  }else {
+    console.log(`${num2} is bigger than ${num1}`)
+  }
+}
 
-// // // console.log(whoIsBigger(32, 96))
+console.log(whoIsBigger(32, 96))
 
 // // /* EXERCISE 3
 // //     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
 // //     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 // // */
 
-// const splitMe = function (str) {
-//     return str.split(" ",)
-// }
+const splitMe = function (str) {
+    return str.split(" ",)
+}
 
 // console.log(splitMe("i love coding"))
 
@@ -114,29 +221,30 @@
 // //     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 // // */
 
-// const deleteOne = function (str, boolean) {
-//     if (boolean) {
-//         return str.substring(1)
-//     } else {
-//         return str.substring(0, str.length -1)
-//     }
-// }
+const deleteOne = function (str, boolean) {
+    if (boolean) {
+        return str.substring(1)
+    } else {
+        return str.substring(0, str.length -1)
+    }
+}
 // console.log(deleteOne("i like strings", false))
 // // /* EXERCISE 5
 // //    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
 // //    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
 // // */
 
-// const onlyLetters = function(str) {
-//     let result = ""
-//     for (i = 0;  i < str.length; i++) {
-//         let currentLetter = str[i]
-//         if (isNaN(currentLetter)) {
-//             result += currentLetter
-//         }
-//     }
-//     return result  
-// }
+const onlyLetters = function(str) {
+    let result = ""
+    for (i = 0;  i < str.length; i++) {
+        let currentLetter = str[i]
+        if (isNaN(currentLetter)) {
+            result += currentLetter
+        }
+    }
+    return result  
+}
+console.log(onlyLetters("I have 4 dogs"))
 // //SOLUTION:
 // const onlyLetters = function (str) {
 //     let result = "";
@@ -269,16 +377,37 @@ console.log(oldestMovie())
 
 // // /* EXERCISE 13
 // //     Write a function called countMovies which returns the number of movies contained in the provided movies array.
+function countMovies(object){
+  return object.length
+}
+console.log(countMovies(movies))
 // // */
 
 // // /* EXERCISE 14
 // //     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 // // */
-
+function onlyTheTitles() {
+  let result = []
+  for (let i  = 0; i < movies.length; i++) {
+    result.push(movies[i].Title)
+    
+  }
+  return result
+}
+console.log(onlyTheTitles())
 // // /* EXERCISE 15
 // //    Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
 // // */
-
+function onlyInThisMillennium () {
+  let arr = []
+  for (let i = 0; i < movies.length; i++) {
+    if (parseInt(movies[i].Year) > 1999) {
+      arr.push(movies[i])
+    }
+  }
+  return arr
+}
+console.log(onlyInThisMillennium())
 // // /* EXERCISE 16 
 // //     Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
 // // */
@@ -330,117 +459,3 @@ console.log(oldestMovie())
 // // */
 
 // // /* This movies array is used throughout the exercises. You're not supposed to alter it. */
-const movies = [
-    {
-      Title: "The Lord of the Rings: The Fellowship of the Ring",
-      Year: "2001",
-      imdbID: "tt0120737",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-    },
-    {
-      Title: "The Lord of the Rings: The Return of the King",
-      Year: "2003",
-      imdbID: "tt0167260",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      Title: "The Lord of the Rings: The Two Towers",
-      Year: "2002",
-      imdbID: "tt0167261",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    },
-    {
-      Title: "Lord of War",
-      Year: "2005",
-      imdbID: "tt0399295",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
-    },
-    {
-      Title: "Lords of Dogtown",
-      Year: "2005",
-      imdbID: "tt0355702",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
-    },
-    {
-      Title: "The Lord of the Rings",
-      Year: "1978",
-      imdbID: "tt0077869",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-    },
-    {
-      Title: "Lord of the Flies",
-      Year: "1990",
-      imdbID: "tt0100054",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
-    },
-    {
-      Title: "The Lords of Salem",
-      Year: "2012",
-      imdbID: "tt1731697",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
-    },
-    {
-      Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
-      Year: "1984",
-      imdbID: "tt0087365",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
-    },
-    {
-      Title: "Lord of the Flies",
-      Year: "1963",
-      imdbID: "tt0057261",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
-    },
-    {
-      Title: "The Avengers",
-      Year: "2012",
-      imdbID: "tt0848228",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-    },
-    {
-      Title: "Avengers: Infinity War",
-      Year: "2018",
-      imdbID: "tt4154756",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-    },
-    {
-      Title: "Avengers: Age of Ultron",
-      Year: "2015",
-      imdbID: "tt2395427",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
-    },
-    {
-      Title: "Avengers: Endgame",
-      Year: "2019",
-      imdbID: "tt4154796",
-      Type: "movie",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-    },
-  ];
