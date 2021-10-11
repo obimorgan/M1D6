@@ -411,25 +411,120 @@ console.log(onlyInThisMillennium())
 // // /* EXERCISE 16 
 // //     Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
 // // */
+function getMovieById(id) {
+let foundMovie
+for (let i = 0; i < movies.length; i++) {
+  if (id === movies[i].imdbID) {
+      foundMovie = movies[i] 
+  }
+}
+return foundMovie
+}
 
 // // /* EXERCISE 17
 // //     Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
 // // */
+// function sumAllTheYears () {
+//   let years = []
+//   for (let i = 0; i < movies.length; i++) {
+//     years.push(movies[i].Year)
+//     let sum = 0
+//     for (let i = 0; i < years[i].length; i++)
+//     sum += years[i]
+//   }
+//   return sum
+// }// this returns the sum numbr of the moves that thas the year key element >>>> returns 30 as there are 30 movies that has the year property
+// function sumAllTheYears () {
+//   let yearsArray = []
+//   for (let i = 0; i < movies.length; i++) {
+//     yearsArray.push(movies[i].Year) 
+//     let sum = 0
+//     for (let num of yearsArray)
+//       sum += num
+//   }
+//   return sum
+// }// this has the same result
+
+function sumAllTheYears () {
+  let sum = 0
+  for (let i = 0; i < movies.length; i++) {
+    sum += parseInt(movies[i].Year)
+  }
+  return sum
+}
+console.log(sumAllTheYears()) // this is the rght solution =>> from the solution!
+
+// function sumAllTheYearsUsingReduceMethod() {
+//   let arrOfYears = []
+//   for(let i = 0; i <  movies.length; i++) {
+//     arrOfYears.push(movies[i].Year)
+//     let sum = arrOfYears.reduce((accumulator, currentValue) => {
+//       return accumulator + currentValue
+//     },0);
+//   }
+//   return sum
+// }
+// console.log(sumAllTheYearsUsingReduceMethod())
+
+const numbers = [1, 2, 2, 3, 4,]
+let sumOfArr = numbers.reduce((accumulator, currentValue) => { 
+  return accumulator + currentValue
+},0)
+
+console.log(sumOfArr)
+
+
+
+
 
 // // /* EXERCISE 18
-// //     Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
+// //     Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which 
+// contain that string in the title.
 // // */
-
+function searchByTitle (str) {
+  let result =  []
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(str) !== -1) { /// if the title does not exist in the title name === -1
+      result.push(movies[i])                    /// note that indexOf is case senstitive
+    }
+  }
+  return result
+}
+console.log(searchByTitle('Avengers: Endgame'))
 // // /* EXERCISE 19
 // //     Write a function called searchAndDivide which receives a string as a parameter and returns an object;
 // //     this object should contain an array called match, made by all the movies from the provided movies array which contain the given string in the title,
 // //     and another array unmatch with all the remaining ones.
 // // */
+function searchAndDivide (str) {
+  let object = {
+    match: [],
+    inmatch: []
+  }
+    for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(str) !== -1) { 
+      object.match.push(movies[i])             
+    } else {
+      object.unmatch.push(movies[i])
+  }}
+return object
+}
+console.log('War')
 
 // // /* EXERCISE 20
-// //    Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
+// //    Write a function called "removeIndex" which receives a number as a parameter and 
+// returns the provided movies array without the element in the given position.
 // // */
-
+function removeIndex (n) {
+  let restofMovies = []
+  for (let i = 0; i < movies.length; i++){
+    if (movies[i] !== n) {
+      restofMovies.push(movies[i])
+    }
+  }
+  return restofMovies
+}
+console.log(removeIndex(0))
 // // // [EXTRAS] JS Advanced
 
 // // /* EXERCISE 21
@@ -440,7 +535,23 @@ console.log(onlyInThisMillennium())
 // //   **
 // //   ***
 // // */
-
+// function halfTree (n) {
+//   let star = "*"
+//   let tree = ""
+//   for (let i = 0; i < n; i++) { //// this is my first guess for the solution it return>> ***
+//     return tree += star
+//   }
+// }
+const halfTree = function (height) {
+  for (let i = 0; i < height; i++) {
+    let toPrint = "";
+    for (let j = 0; j < i + 1; j++) { /// the solution
+      toPrint += "*";
+    }
+    console.log(toPrint);
+  }
+};
+// console.log(halfTree(3))
 // // /* EXERCISE 22 
 // //   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
 // //   Example: 
@@ -449,7 +560,21 @@ console.log(onlyInThisMillennium())
 // //    *** 
 // //   *****
 // // */
+// const fullTree = function (height) {
+//   let arr = [*, *, *, *, *, *, *, *, *]
+//   for (let i = 0; i < height; i++) {
+//     let toPrint = ""
+//     for (let j = 0; j < i + 1; j++) { /// the solution
+//       toPrint += "*"
+//       for( let k = 0; k < j +1; k++) {
+//         toPrint += " * "
+//       }
+//     }
+//     console.log(toPrint);
+//   }
+// };
 
+// console.log()
 // // /* EXERCISE 23
 // //   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 // // */
